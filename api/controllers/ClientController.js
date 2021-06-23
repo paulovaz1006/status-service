@@ -1,7 +1,7 @@
 const ClientModel = require('../models');
 
 class ClientController { 
-    static async registerClient(req, res) {
+    async registerClient(req, res) {
         const data = {
             name: 'teste',
             phone: 123123,
@@ -17,7 +17,7 @@ class ClientController {
         }
     }
 
-    static async searchClient(req, res) {
+    async searchClient(req, res) {
         const { id } = req.params;
         const searchClient = await ClientModel.clients.findOne({
             where: {

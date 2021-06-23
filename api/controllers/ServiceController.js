@@ -1,7 +1,7 @@
 const ModelService = require('../models');
 
 class ServiceController {
-    static async registerService(req, res) {
+    async registerService(req, res) {
         const data = req.body;        
         const searchPhone = await ModelService.clients.findOne({
             where: {
@@ -34,7 +34,7 @@ class ServiceController {
         }            
     }
 
-    static async updateService(req, res) {
+    async updateService(req, res) {
         const { id } = req.params;
         const { status_id } = req.body;
 
